@@ -2,6 +2,8 @@ package system;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class LeafTest {
@@ -10,18 +12,6 @@ public class LeafTest {
 
     @Test
     public void testName() {
-        FileSystem f = new FileSystem(9);
-        try {
-            Node n = new Leaf("l",1);
-            assertEquals(((Leaf) n).name, "l");
-        } catch (OutOfSpaceException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public void testSize() {
-        FileSystem f = new FileSystem(9);
         try {
             Node n = new Leaf("l",1);
             assertEquals(((Leaf) n).name, "l");
@@ -32,22 +22,42 @@ public class LeafTest {
     }
 
     @Test
-    public void getPath() {
+    public void testSize() {
         try {
-            Node n = new Leaf("l",10);
-            //name
-            //depth
-            assertEquals(n.depth,0);
-            //size
-            assertTrue(((Leaf) n).size==3);
-            //path
+            Node n = new Leaf("l",1);
+            assertEquals(((Leaf) n).size, 1);
+        } catch (OutOfSpaceException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Test
+    public void testPath() {
+        try {
+            Node n = new Leaf("n",1);
             String [] specPath= new String[2];
             specPath[0]="root";
             specPath[1]="n";
-            assertEquals(n.getPath().toString(),specPath.toString());
+            String s= Arrays.toString(specPath);
+            String s1= Arrays.toString(n.getPath());
+            assertEquals(s,s1);
         } catch (Exception e) {
             assertFalse(e instanceof OutOfSpaceException);
             System.out.println(e.getStackTrace().toString());
         }
     }
+
+    @Test
+    public void testOverAllocate() {
+        try {
+            Node n = new Leaf("l",10);
+        } catch (Exception e) {
+            assertFalse(e instanceof OutOfSpaceException);
+        }
+    }
+
+
+
+
 }
