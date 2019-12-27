@@ -12,18 +12,30 @@ public class LeafTest {
     public void testName() {
         FileSystem f = new FileSystem(9);
         try {
-            Node n = new Leaf("l",10);
+            Node n = new Leaf("l",1);
+            assertEquals(((Leaf) n).name, "l");
         } catch (OutOfSpaceException e) {
             e.printStackTrace();
         }
 
     }
+
+    public void testSize() {
+        FileSystem f = new FileSystem(9);
+        try {
+            Node n = new Leaf("l",1);
+            assertEquals(((Leaf) n).name, "l");
+        } catch (OutOfSpaceException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     @Test
     public void getPath() {
         try {
             Node n = new Leaf("l",10);
             //name
-            assertEquals(((Leaf) n).name, "l");
             //depth
             assertEquals(n.depth,0);
             //size
