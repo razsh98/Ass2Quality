@@ -33,13 +33,7 @@ public class TreeTest {
         t.parent=rootOft;
         assertEquals(rootOft.GetChildByName("dvir&raz_Tree"), t);
     }
-    @Test
-    public void sameNameInChildes(){
-        Tree t = new Tree("dvir&raz_Tree");
-        Tree rootOft=new Tree("rootOft");
-        t.parent=rootOft;
-        assertEquals(rootOft.GetChildByName("dvir&raz_Tree"), t);
-    }
+
     @Test
     public void testGetPath(){
         try {
