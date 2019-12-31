@@ -87,11 +87,4 @@ public class Space {
 
     }
 
-//    public class SpaceStub extends Space{
-//        private HashMap<Integer, String[]> blocks;
-//
-//        public SpaceStub(int size){
-//
-//        }
-//    }
 }
