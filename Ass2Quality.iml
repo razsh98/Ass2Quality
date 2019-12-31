@@ -17,5 +17,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="org.pitest:pitest:1.2.2" level="project" />
   </component>
 </module>

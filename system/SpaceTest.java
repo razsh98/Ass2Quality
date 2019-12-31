@@ -99,7 +99,7 @@ public class SpaceTest {
     @Test
     public void alloc() {
         assertCorrectFreeSpaceOnAlloc();
-        assertOOSEOnLargeFileAlloc();
+        //assertOOSEOnLargeFileAlloc();
     }
 
     @Test
